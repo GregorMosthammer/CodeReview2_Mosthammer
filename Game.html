@@ -1,0 +1,125 @@
+<html> <!-- Sorry i know the webside is not good, but i stuck at a bug about three hours i can no sum up the random numbers it was rly frustating-->
+<head>
+  <title>CodeReview2</title>
+  <link rel='stylesheet' type='text/css' href='styles.css'>
+</head>
+<body onload="randomColor()">
+<header>
+
+<h1>roll of the dice</h1>
+
+</header>
+
+<section>
+<div class="leftsection">
+Spieler 1: <input id="playerone">
+</div>
+<div class="rightsection">
+Spieler 2: <input id="playertwo">
+<button id="play">Lets play!</button>
+</div>
+ 
+</section>
+
+<hr>
+<div id="outputplayer"></div>
+
+
+
+<main>
+  <div class="leftcontent">
+
+Get you first Number:<button onclick="number()">click</button>
+
+<p id="randomnumber"></p>
+
+Get you second Number:<button onclick="number2()">click</button>
+
+<p id="randomnumber2"></p>
+
+Get you third Number:<button onclick="number3()">click</button>
+
+<p id="randomnumber3"></p>
+<hr class="hrclass">
+
+
+  </div>
+
+  <div class="rightcontent">
+
+Get you first Number:<button onclick="number4()">click</button>
+
+<p id="randomnumber4"></p> 
+
+Get you second Number:<button onclick="number5()">click</button>
+
+<p id="randomnumber5"></p>
+
+Get you third Number:<button onclick="number6()">click</button>
+
+<p id="randomnumber6"></p>
+<hr class="hrclass">
+
+  </div>
+</main>
+
+ 
+<script>
+function inputoutput() {
+    var rplayer = document.getElementById("playerone").value;
+    var lplayer = document.getElementById("playertwo").value;
+ 
+    var html =rplayer + " vs " + lplayer;
+ 
+    document.getElementById("outputplayer").innerHTML = html;
+}
+ 
+document.getElementById("play").addEventListener('click', inputoutput);
+
+function number() {
+    var x = Math.floor((Math.random() * 6) + 1);
+    document.getElementById("randomnumber").innerHTML = x;
+}
+
+function number2() {
+    var x = Math.floor((Math.random() * 6) + 1);
+    document.getElementById("randomnumber2").innerHTML = x;
+}
+
+function number3() {
+    var x = Math.floor((Math.random() * 6) + 1);
+    document.getElementById("randomnumber3").innerHTML = x;
+}
+
+function number4() {
+    var x = Math.floor((Math.random() * 6) + 1);
+    document.getElementById("randomnumber4").innerHTML = x;
+}
+
+function number5() {
+    var x = Math.floor((Math.random() * 6) + 1);
+    document.getElementById("randomnumber5").innerHTML = x;
+}
+
+function number6() {
+    var x = Math.floor((Math.random() * 6) + 1);
+    document.getElementById("randomnumber6").innerHTML = x;
+}
+
+
+
+
+
+
+function randomColor(){
+  var r=Math.floor(Math.random()*256);
+  var g=Math.floor(Math.random()*256);
+  var b=Math.floor(Math.random()*256);
+  var result= "rgb("+r+","+g+","+b+")";
+  document.body.style.background=result;
+  document.getElementById('test').innerHTML="testi";
+}
+</script>
+ 
+</body>
+</html>

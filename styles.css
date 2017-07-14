@@ -1,0 +1,82 @@
+@media only screen and (max-width: 1000px) {
+   	body {
+        background-color: lightblue;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+   	body {
+        background-color: lightblue;
+    }
+}
+
+body {
+	color: white;
+}
+
+h1 {
+	text-align: center;
+}
+
+section {
+	width: 99vw;
+	display: flex;
+	flex-direction: row;
+}
+
+.leftsection {
+	flex-basis: 48vw;
+	margin-left: 20vw;
+	text-align: center;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.rightsection {
+	flex-basis: 48vw;
+	margin-right: 20vw;
+	text-align: center;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+#outputplayer {
+	text-align: center;
+}
+
+
+.leftheader {
+	flex-basis: 48vw;
+	margin-left: 20vw;
+	text-align: center;
+
+}
+
+.rightheader {
+	flex-basis: 48vw;
+	margin-right: 20vw;
+	text-align: center;
+}
+
+
+main {
+	width: 99vw;
+	display: flex;
+	flex-direction: row;
+}
+
+.leftcontent {
+	flex-basis: 48vw;
+	margin-left: 20vw;
+	text-align: center;
+}
+
+.rightcontent {
+	flex-basis: 48vw;
+	margin-right: 20vw;
+	text-align: center;
+}
+
+.hrclass{
+	width: 200px;
+} /* for the sum */
