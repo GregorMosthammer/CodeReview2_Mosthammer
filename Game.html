@@ -90,14 +90,22 @@
 </main>
 
   <div id="center">
- <!-- i dont know why it is not working -->
-  <button onclick="winner()">Who will win</button> 
 
+  <button onclick="winner()">Who won?</button> 
   <p id="testi"></p>
-
+  
   </div>
 
+
+<footer>
+      <p>&copy; Gregor Mosthammer</p>
+</footer>
+
+
+
 <script>
+    var sum1 = 0 // globale summe 1
+    var sum2 = 0 // globale summe 2
 function inputoutput() {
     var rplayer = document.getElementById("playerone").value;
     var lplayer = document.getElementById("playertwo").value;
@@ -133,8 +141,8 @@ function number() {
     
     var player2Res = [d,e,f];
  
-    var sum1 = (player1Res[0]+player1Res[1]+player1Res[2]);
-    var sum2 = (player2Res[0]+player2Res[1]+player2Res[2]);
+    sum1 = (player1Res[0]+player1Res[1]+player1Res[2]);
+    sum2 = (player2Res[0]+player2Res[1]+player2Res[2]);
 
     document.getElementById("outputsum").innerHTML = sum1;
     document.getElementById("outputsum2").innerHTML = sum2;
@@ -142,15 +150,15 @@ function number() {
 }
 
     function winner(){
-  if (sum1>sum2){
-    document.getElementByID("testi").innerHTML ="Winner"
-  };
-  if (sum1<sum2){
-    document.getElementByID("testi").innerHTML ="Loser"
-  };
-  if (sum1==sum2){
-    document.getElementByID("testi").innerHTML ="Draw"
-  };
+        if (sum1>sum2){
+            document.getElementById("testi").innerHTML ="Player 1 Win" 
+        };
+        if (sum1<sum2){
+            document.getElementById("testi").innerHTML ="Player 2 Win" 
+        };
+        if (sum1==sum2){
+            document.getElementById("testi").innerHTML ="Draw"  
+        };
 }
   
 
@@ -163,7 +171,6 @@ function randomColor(){
     var result= "rgb("+r+","+g+","+b+")";
 
     document.body.style.background=result;
-    document.getElementById('test').innerHTML="testi";
 
 }
 </script>

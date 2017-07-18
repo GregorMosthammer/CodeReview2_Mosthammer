@@ -84,3 +84,12 @@ main {
 #hrclass{					/* for the sum */
 	width: 200px;
 } 						
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 99vw;
+	line-height: 10px;
+	text-align: right;
+	background: transparent;
+}
