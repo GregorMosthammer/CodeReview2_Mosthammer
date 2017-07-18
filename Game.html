@@ -1,4 +1,5 @@
-<html> <!-- Sorry i know the webside is not good, but i stuck at a bug about three hours i can no sum up the random numbers it was rly frustating-->
+
+<html>
 <head>
   <title>CodeReview2</title>
   <link rel='stylesheet' type='text/css' href='styles.css'>
@@ -6,64 +7,96 @@
 <body onload="randomColor()">
 <header>
 
-<h1>roll of the dice</h1>
+    <h1>roll of the dice</h1>
 
 </header>
 
 <section>
-<div class="leftsection">
-Spieler 1: <input id="playerone">
-</div>
-<div class="rightsection">
-Spieler 2: <input id="playertwo">
-<button id="play">Lets play!</button>
-</div>
+
+    <div class="leftsection">
+
+        Spieler 1: <input id="playerone">
+
+    </div>
+
+    <div class="rightsection">
+
+        Spieler 2: <input id="playertwo">
+
+    <button id="play">Lets play!</button>
+
+    </div>
  
 </section>
 
 <hr>
-<div id="outputplayer"></div>
+
+    <div id="outputplayer"></div>
+
+<br>
+
+    <div id="center">
+  
+    <button onclick="number()">click</button>
+
+    </div>
 
 
 
 <main>
-  <div class="leftcontent">
 
-Get you first Number:<button onclick="number()">click</button>
+    <div class="leftcontent">
 
-<p id="randomnumber"></p>
+        Get you first Number:
 
-Get you second Number:<button onclick="number2()">click</button>
+          <p id="randomnumber"></p>
 
-<p id="randomnumber2"></p>
+        Get you second Number:
 
-Get you third Number:<button onclick="number3()">click</button>
+          <p id="randomnumber2"></p>
 
-<p id="randomnumber3"></p>
-<hr class="hrclass">
+        Get you third Number:
 
+          <p id="randomnumber3"></p>
 
-  </div>
+<hr id="hrclass">
+
+          <p id="outputsum"></p>
+
+    </div>
 
   <div class="rightcontent">
 
-Get you first Number:<button onclick="number4()">click</button>
+        Get you first Number:
 
-<p id="randomnumber4"></p> 
+          <p id="randomnumber4"></p>
 
-Get you second Number:<button onclick="number5()">click</button>
+        Get you second Number:
 
-<p id="randomnumber5"></p>
+          <p id="randomnumber5"></p>
 
-Get you third Number:<button onclick="number6()">click</button>
+        Get you third Number:
 
-<p id="randomnumber6"></p>
-<hr class="hrclass">
+          <p id="randomnumber6"></p>
+
+<hr id="hrclass">
+
+          <p id="outputsum2"></p>
 
   </div>
+
+
+
 </main>
 
- 
+  <div id="center">
+ <!-- i dont know why it is not working -->
+  <button onclick="winner()">Who will win</button> 
+
+  <p id="testi"></p>
+
+  </div>
+
 <script>
 function inputoutput() {
     var rplayer = document.getElementById("playerone").value;
@@ -74,50 +107,64 @@ function inputoutput() {
     document.getElementById("outputplayer").innerHTML = html;
 }
  
-document.getElementById("play").addEventListener('click', inputoutput);
+    document.getElementById("play").addEventListener('click', inputoutput);
 
-function number() {
-    var x = Math.floor((Math.random() * 6) + 1);
-    document.getElementById("randomnumber").innerHTML = x;
+
+function number() {                                       
+    var a = Math.floor((Math.random() * 6) + 1);
+    document.getElementById("randomnumber").innerHTML = a;
+
+    var b = Math.floor((Math.random() * 6) + 1);
+    document.getElementById("randomnumber2").innerHTML = b;
+
+    var c = Math.floor((Math.random() * 6) + 1);
+    document.getElementById("randomnumber3").innerHTML = c;
+
+    var player1Res = [a,b,c];
+
+    var d = Math.floor((Math.random() * 6) + 1);
+    document.getElementById("randomnumber4").innerHTML = d;
+
+    var e = Math.floor((Math.random() * 6) + 1);
+    document.getElementById("randomnumber5").innerHTML = e;
+
+    var f = Math.floor((Math.random() * 6) + 1);
+    document.getElementById("randomnumber6").innerHTML = f;
+    
+    var player2Res = [d,e,f];
+ 
+    var sum1 = (player1Res[0]+player1Res[1]+player1Res[2]);
+    var sum2 = (player2Res[0]+player2Res[1]+player2Res[2]);
+
+    document.getElementById("outputsum").innerHTML = sum1;
+    document.getElementById("outputsum2").innerHTML = sum2;
+
 }
 
-function number2() {
-    var x = Math.floor((Math.random() * 6) + 1);
-    document.getElementById("randomnumber2").innerHTML = x;
+    function winner(){
+  if (sum1>sum2){
+    document.getElementByID("testi").innerHTML ="Winner"
+  };
+  if (sum1<sum2){
+    document.getElementByID("testi").innerHTML ="Loser"
+  };
+  if (sum1==sum2){
+    document.getElementByID("testi").innerHTML ="Draw"
+  };
 }
-
-function number3() {
-    var x = Math.floor((Math.random() * 6) + 1);
-    document.getElementById("randomnumber3").innerHTML = x;
-}
-
-function number4() {
-    var x = Math.floor((Math.random() * 6) + 1);
-    document.getElementById("randomnumber4").innerHTML = x;
-}
-
-function number5() {
-    var x = Math.floor((Math.random() * 6) + 1);
-    document.getElementById("randomnumber5").innerHTML = x;
-}
-
-function number6() {
-    var x = Math.floor((Math.random() * 6) + 1);
-    document.getElementById("randomnumber6").innerHTML = x;
-}
-
-
-
+  
 
 
 
 function randomColor(){
-  var r=Math.floor(Math.random()*256);
-  var g=Math.floor(Math.random()*256);
-  var b=Math.floor(Math.random()*256);
-  var result= "rgb("+r+","+g+","+b+")";
-  document.body.style.background=result;
-  document.getElementById('test').innerHTML="testi";
+    var r=Math.floor(Math.random()*256);
+    var g=Math.floor(Math.random()*256);
+    var b=Math.floor(Math.random()*256);
+    var result= "rgb("+r+","+g+","+b+")";
+
+    document.body.style.background=result;
+    document.getElementById('test').innerHTML="testi";
+
 }
 </script>
  
